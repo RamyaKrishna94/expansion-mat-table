@@ -36,15 +36,25 @@
         <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="expandedDetail">
+      <ng-container matColumnDef="displayedColumns2">
         <mat-cell *matCellDef="let detail">
-          The symbol for sdf is Hydrogen
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Favorite food" value="Sushi">
+                </mat-form-field>
+              
+                <mat-form-field class="example-full-width">
+                  <textarea matInput placeholder="Leave a comment"></textarea>
+                </mat-form-field>
+              </form>
+          {{detail.element.position}} {{detail.element.symbol}}
         </mat-cell>
       </ng-container>
 
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns;" matRipple="" [class.expanded]="expandedElement == row" (click)="expandedElement = row"></mat-row>
-      <mat-row *matRowDef="let row; columns: [&apos;expandedDetail&apos;]; when: isExpansionDetailRow" [@detailExpand]="row.element == expandedElement ? &apos;expanded&apos; : &apos;collapsed&apos;" style="overflow: hidden">
+
+      <mat-row *matRowDef="let row; columns: [&apos;displayedColumns2&apos;]; when: isExpansionDetailRow" [@detailExpand]="row.element == expandedElement ? &apos;expanded&apos; : &apos;collapsed&apos;" style="overflow: hidden">
       </mat-row>
 
     </mat-table>

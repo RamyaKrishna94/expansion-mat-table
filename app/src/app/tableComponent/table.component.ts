@@ -32,6 +32,8 @@ export class tableComponent implements OnInit {
 
     }
     displayedColumns = ['addIcon','position', 'name', 'weight', 'symbol'];
+
+    displayedColumns2 = [ 'position','symbol'];
   dataSource = new ExampleDataSource();
   displayObject = false;
 
