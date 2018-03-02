@@ -6,8 +6,8 @@
       <!-- addIcon Column -->
       <ng-container matColumnDef="addIcon">
         <mat-header-cell *matHeaderCellDef=""> </mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          <i class="material-icons">add_circle</i>
+        <mat-cell *matCellDef="let element" (click)="expandedElement = element;">
+          <i class="material-icons">{{expandedElement == element?&apos;remove_circle&apos;: &apos;add_circle&apos;}}</i>
         </mat-cell>
       </ng-container>
 
@@ -38,27 +38,22 @@
 
       <ng-container matColumnDef="displayedColumns2">
         <mat-cell *matCellDef="let detail">
-            <form class="example-form">
-                <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Favorite food" value="Sushi">
-                </mat-form-field>
-              
-                <mat-form-field class="example-full-width">
-                  <textarea matInput placeholder="Leave a comment"></textarea>
-                </mat-form-field>
-              </form>
+          <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <input matInput="" placeholder="Favorite food" value="Sushi">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <textarea matInput="" placeholder="Leave a comment"></textarea>
+            </mat-form-field>
+          </form>
           {{detail.element.position}} {{detail.element.symbol}}
         </mat-cell>
       </ng-container>
-
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;" matRipple="" [class.expanded]="expandedElement == row" (click)="expandedElement = row"></mat-row>
-
+      <mat-row *matRowDef="let row; columns: displayedColumns;" matRipple="" [class.expanded]="expandedElement == row"></mat-row>
       <mat-row *matRowDef="let row; columns: [&apos;displayedColumns2&apos;]; when: isExpansionDetailRow" [@detailExpand]="row.element == expandedElement ? &apos;expanded&apos; : &apos;collapsed&apos;" style="overflow: hidden">
       </mat-row>
-
     </mat-table>
-
-
   </div>
 </div>
