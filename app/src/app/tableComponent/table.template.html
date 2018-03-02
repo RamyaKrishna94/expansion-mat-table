@@ -6,7 +6,7 @@
       <!-- addIcon Column -->
       <ng-container matColumnDef="addIcon">
         <mat-header-cell *matHeaderCellDef=""> </mat-header-cell>
-        <mat-cell *matCellDef="let element" (click)="expandedElement = element;">
+        <mat-cell *matCellDef="let element" (click)="element.expand = !element.expand">
           <i class="material-icons">{{expandedElement == element?&apos;remove_circle&apos;: &apos;add_circle&apos;}}</i>
         </mat-cell>
       </ng-container>
@@ -51,8 +51,8 @@
         </mat-cell>
       </ng-container>
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;" matRipple="" [class.expanded]="expandedElement == row"></mat-row>
-      <mat-row *matRowDef="let row; columns: [&apos;displayedColumns2&apos;]; when: isExpansionDetailRow" [@detailExpand]="row.element == expandedElement ? &apos;expanded&apos; : &apos;collapsed&apos;" style="overflow: hidden">
+      <mat-row *matRowDef="let row; columns: displayedColumns;" matRipple="" [class.expanded]="!row.expand" (click)="test(row)"></mat-row>
+      <mat-row *matRowDef="let row; columns: [&apos;displayedColumns2&apos;]; when: isExpansionDetailRow" [@detailExpand]="row.element.expand ? &apos;expanded&apos; : &apos;collapsed&apos;" style="overflow: hidden">
       </mat-row>
     </mat-table>
   </div>
