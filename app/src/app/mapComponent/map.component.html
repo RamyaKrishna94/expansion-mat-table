@@ -1,0 +1,9 @@
+<div class="map">
+  <agm-map #gm [latitude]="lat" [longitude]="lng" [usePanning]="usePanning" [zoom]="mapZoom" (mapClick)="mapClicked($event)">
+    <agm-marker *ngIf="!hideMarker" [latitude]="lat" [longitude]="lng" [markerDraggable]="markerTraggerble" [iconUrl]="iconConfiguration" (dragEnd)="marker($event)" (markerClick)="markerEventEmitter($event);gm.lastOpen?.close(); gm.lastOpen = infoWindow">
+      <agm-info-window #infoWindow *ngIf="formattedAddress">
+        <strong>{{formattedAddress}}</strong>
+      </agm-info-window>
+    </agm-marker>
+  </agm-map>
+</div>

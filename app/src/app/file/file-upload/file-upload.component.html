@@ -1,0 +1,17 @@
+<button mat-raised-button class="bh-file-upload" (click)="fileInput.click()" (keyup.enter)="fileInput.click()" color="primary" *ngIf="!fileName">
+  <mat-icon>attach_file</mat-icon>
+  <span>Choose a file...</span>
+  <input #fileInput type="file" (change)="handleSelect($event)" style="display:none;" />
+</button>
+<div *ngIf="fileName">
+  <button mat-raised-button color="primary" (click)="handleUpload()">
+  	<mat-icon>file_upload</mat-icon>
+    <span>{{fileName}}</span>
+  </button>
+  <button *ngIf="!isUploadDone" mat-icon-button color="warn" (click)="cancel()" class="bh-file-upload-cancel">
+    <mat-icon>cancel</mat-icon>
+  </button>
+  <button *ngIf="isUploadDone" mat-icon-button (click)="cancel()" class="bh-file-upload-done">
+    <mat-icon>done</mat-icon>
+  </button>
+</div>

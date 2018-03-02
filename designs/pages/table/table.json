@@ -1,0 +1,13 @@
+{
+    "appPageId": "8ee13559-1863-3e6f-9eda-5fc58ccfc887",
+    "appPageName": "table",
+    "componentName": "tableComponent",
+    "selectorName": "bh-table",
+    "htmlFileName": "table.template.html",
+    "tsFileName": "table.component.ts",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

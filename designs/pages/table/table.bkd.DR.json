@@ -1,0 +1,31 @@
+{
+    "8d2f20b4-1bfa-a7a4-309b-0ce148e63fc0": {
+        "name": "HTML",
+        "guid": "8d2f20b4-1bfa-a7a4-309b-0ce148e63fc0",
+        "template": "%html%",
+        "designerTemplate": "<div class=\"ad-lists bkeeper-container-label bkeeper-general-css\" b-props=\"html-editor\"><i style=\"font-size: 37px;line-height: 2;padding: 1px;\" class=\"material-icons\">code</i></div>",
+        "paletteTemplate": "HTML",
+        "templateUrl": "",
+        "htmlAttributes": [
+            {
+                "_key": "style",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "class",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "html",
+                "_value": "<div class=\"example-container mat-elevation-z8\">\n\n  <mat-table #table [dataSource]=\"dataSource\">\n    \n    <!-- addIcon Column -->\n    <ng-container matColumnDef=\"addIcon\">\n      <mat-header-cell *matHeaderCellDef>  </mat-header-cell>\n      <mat-cell *matCellDef=\"let element\"><i class=\"material-icons\">add_circle</i>\n      </mat-cell>\n           </ng-container>\n    \n\n    <!-- Position Column -->\n    <ng-container matColumnDef=\"position\">\n      <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>\n      <mat-cell *matCellDef=\"let element\"> {{element.position}} </mat-cell>\n    </ng-container>\n\n    <!-- Name Column -->\n    <ng-container matColumnDef=\"name\">\n      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>\n      <mat-cell *matCellDef=\"let element\"> {{element.name}} </mat-cell>\n    </ng-container>\n\n    <!-- Weight Column -->\n    <ng-container matColumnDef=\"weight\">\n      <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>\n      <mat-cell *matCellDef=\"let element\"> {{element.weight}} </mat-cell>\n    </ng-container>\n\n    <!-- Symbol Column -->\n    <ng-container matColumnDef=\"symbol\">\n      <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>\n      <mat-cell *matCellDef=\"let element\"> {{element.symbol}} </mat-cell>\n    </ng-container>\n\n        <ng-container matColumnDef=\"expandedDetail\">\n      <mat-cell *matCellDef=\"let detail\"> \n        The symbol for sdf is Hydrogen\n      </mat-cell>\n    </ng-container>\n\n    <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n    <mat-row *matRowDef=\"let row; columns: displayedColumns;\"\n             matRipple\n             [class.expanded]=\"expandedElement == row\"\n             (click)=\"expandedElement = row\"></mat-row>\n  <mat-row *matRowDef=\"let row; columns: ['expandedDetail']; when: isExpansionDetailRow\"\n        [@detailExpand]=\"row.element == expandedElement ? 'expanded' : 'collapsed'\"\n        style=\"overflow: hidden\"> \n</mat-row>\n \n  </mat-table>\t\n  \n\n</div>",
+                "_type": "a",
+                "_attrDef": "p"
+            }
+        ],
+        "type": 7
+    }
+}
